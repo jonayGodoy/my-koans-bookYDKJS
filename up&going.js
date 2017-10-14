@@ -31,4 +31,16 @@ describe("Up & Going", () => {
 
         (a == b).should.not.equal(true);
     });
+
+    it("NaN always is false with Number", function () {
+        let a = 42;
+        let b = "foo";
+
+        (a < b).should.equal(false);
+        (a > b).should.equal(false);
+        (a == b).should.equal(false);
+        isNaN(b).should.equal(true);
+    });
+    
+    
 });
