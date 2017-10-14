@@ -20,4 +20,15 @@ describe("Up & Going", () => {
         obj["a"].should.equal(obj.a);
         obj["Hello world"].should.equal("separated");
     });
+
+    it("array is '==' for string, but not '==' array", function () {
+        let a = [1, 2, 3];
+        let b = [1, 2, 3];
+        let c = "1,2,3";
+
+        (a == c).should.equal(true);
+        (b == c).should.equal(true);
+
+        (a == b).should.not.equal(true);
+    });
 });
