@@ -41,6 +41,10 @@ describe("Up & Going", () => {
         (a == b).should.equal(false);
         isNaN(b).should.equal(true);
     });
-    
+
+    it("ReferenceError for mode strict", function () {
+        //lack to check without strict mode
+        expect((() => a = 1)).to.throw("is not defined");
+    });
     
 });
