@@ -60,5 +60,27 @@ describe("Up & Going", () => {
         let closureAdd = makerAdder(1);
         closureAdd(4).should.equal(5)
     });
+
+    it("this in JS is Rare", function () {
+        function foo() {
+          return this.bar ;
+        }
+
+        let bar = "global";
+
+        let obj1 = {
+            bar: "obj1",
+            foo: foo
+        };
+
+        let obj2 = {bar: "obj2"};
+
+        //mode strict undefined, not mode strict "global"
+        // expect(foo()).to.throw();
+
+        obj1.foo().should.equal("obj1");
+        foo.call( obj2 ).should.equal("obj2");
+        expect(new foo()).to.be.empty;			// undefined
+    });
     
 });
