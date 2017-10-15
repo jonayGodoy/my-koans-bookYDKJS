@@ -53,5 +53,12 @@ describe("Up & Going", () => {
 
         execute.should.equal(true);
     });
+
+    it("reviewing closures ES6", function () {
+        let makerAdder = (x) => (y) => x + y;
+
+        let closureAdd = makerAdder(1);
+        closureAdd(4).should.equal(5)
+    });
     
 });
