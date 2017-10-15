@@ -46,5 +46,12 @@ describe("Up & Going", () => {
         //lack to check without strict mode
         expect((() => a = 1)).to.throw("is not defined");
     });
+
+    it("Immediately Invoked Function Expressions (IIFEs)", function () {
+        let execute = (function IIFE(){
+                        return true;})();
+
+        execute.should.equal(true);
+    });
     
 });
