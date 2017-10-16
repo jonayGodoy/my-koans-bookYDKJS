@@ -82,5 +82,15 @@ describe("Up & Going", () => {
         foo.call( obj2 ).should.equal("obj2");
         expect(new foo()).to.be.empty;			// undefined
     });
+
+    it("Object.create can be used inheritance", function () {
+        let foo = {a : 42};
+
+        let bar = Object.create(foo);
+        bar.b = "Hello world";
+
+        bar.a.should.equal(42);
+        bar.b.should.equal("Hello world");
+    });
     
 });
